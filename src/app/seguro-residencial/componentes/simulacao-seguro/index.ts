@@ -1,0 +1,1 @@
+export * from './simulacao-seguro.component'

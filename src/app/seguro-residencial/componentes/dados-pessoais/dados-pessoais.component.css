@@ -1,0 +1,32 @@
+p{
+    font-size: 16px;
+}
+.row-form{
+    margin-bottom: 40px;
+}
+
+.parceiro{
+    padding: 20px;
+    background: #F3F3F3;
+    text-align: justify;
+}
+
+.titulo{
+    padding: 30px;
+    margin-bottom: 50px;
+    background: #F3F3F3;
+}
+
+.titulo h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.titulo h1 span{
+    color: #ef6c00;
+}
+
+.titulo h2{
+    margin: 0;
+}

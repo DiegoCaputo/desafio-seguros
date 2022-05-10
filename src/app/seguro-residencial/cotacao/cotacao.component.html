@@ -1,0 +1,35 @@
+<mat-tab-group [(selectedIndex)]="tabAtiva">
+    <mat-tab label="questionário">
+        <app-questoes (respostaQuestaoEmitter)="getQuestaoResposta($event)" [questoes]="questoes"></app-questoes>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button [disabled]="!respostasQuestao" (click)="selecaoCoberturas()" mat-raised-button color="primary">seleção de coberturas</button>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab [disabled]="!tab2Ativa" label="coberturas">
+        <app-coberturas *ngIf="tab2Ativa" (coberturasSelecionadasEmitter)="getCoberturasSelecionadas($event)" [oferta]="oferta"></app-coberturas>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button (click)="ativarTab(2)" mat-raised-button color="primary">dados pessoais</button>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab [disabled]="!tab3Ativa" label="dados pessoais">
+        <app-dados-pessoais *ngIf="tab3Ativa" (formGroupEmitter)="getFormularioDadosPessoais($event)"></app-dados-pessoais>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <button [disabled]="!habilitaBtnSimulacao" (click)="calcularSeguro()" mat-raised-button color="primary">ver o preço do meu seguro</button>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab [disabled]="!tab4Ativa" label="resumo do meu seguro">
+        <app-simulacao-seguro *ngIf="tab4Ativa" [simulacao]="simulacaoResponse"></app-simulacao-seguro>
+    </mat-tab>
+</mat-tab-group>

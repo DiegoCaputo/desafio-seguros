@@ -1,0 +1,24 @@
+.titulo{
+    border-bottom: 1px solid #ef6c00;
+    padding: 10px;
+}
+
+::ng-deep.mat-card-content{
+    padding-top: 15px;
+}
+
+::ng-deep.mat-card{
+    min-height: 340px;
+    margin-bottom: 40px;
+}
+
+h4{
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.valores{
+    border-bottom: 1px solid #ef6c00;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,26 @@
+.titulo{
+    padding: 30px;
+    margin-bottom: 50px;
+    background: #F3F3F3;
+}
+
+.titulo h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.titulo h1 span{
+    color: #ef6c00;
+}
+
+.titulo h2{
+    margin: 0;
+}
+
+@media (max-width: 780px)
+{
+  .titulo img{
+      display: none;
+  }
+}

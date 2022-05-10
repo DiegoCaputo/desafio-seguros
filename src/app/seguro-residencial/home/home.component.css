@@ -1,0 +1,74 @@
+img{
+    width: -webkit-fill-available;
+}
+
+.parceiro{
+    padding: 34px;
+    background-color: hsla(0,0%,98%,.98);
+    margin-bottom: 15px;
+}
+
+.parceiro p{
+    line-height: 25px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.parceiro .logo{
+    border-right: 1px solid #f57c00;
+}
+
+.vantagens-titulo h1{
+    margin-bottom: 5px;
+}
+
+.vantagens-titulo i {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f57c00;
+    cursor: pointer;
+}
+
+.vantagens{
+    background: hsla(0,0%,98%,.98); 
+}
+
+.vantagens .vantagens-content{
+    padding-top: 110px;
+    padding-right: 110px;
+    padding-left: 110px;
+    padding-bottom: 45px;
+}
+
+.vantagens .vantagens-content button{
+    margin-top: 40px;
+}
+
+.vantagens h1{
+    padding: 40px;
+    text-align: center;
+    background: #2B374A;
+    color: #FFF;
+}
+
+.banner .banner-msg{
+    position: absolute;
+    top: 20%;
+    color: #FFF;
+}
+
+.banner .banner-msg h1{
+    line-height: 40px;
+}
+
+.banner .banner-msg h1.titulo{
+    border-bottom: 2px solid #f57c00;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.banner .banner-msg h1.titulo span{
+    color: #f57c00;
+    font-weight: 500;
+}

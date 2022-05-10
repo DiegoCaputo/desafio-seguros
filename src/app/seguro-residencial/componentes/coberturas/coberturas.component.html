@@ -1,0 +1,48 @@
+<div class="coberturas">
+    <div class="titulo">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h1>você sabe o que é cobertura?</h1>
+                </div>
+                <div class="col-9">
+                    <h2>é o que garante que você vai receber a indenização em caso de perdas ou danos, e o mais
+                        legal é que você pode personalizar tudo durante a contratação</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-cobertura">
+            <div *ngFor="let cobertura of coberturas" class="col-sm-12 col-md-3 col-lg-3 col-xs-3">
+                <mat-card>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <img mat-card-image src="../../../../assets/imagens/{{cobertura.identificador}}.svg">
+                        </div>
+                    </div>
+                    <mat-card-content>
+                        <h2>{{cobertura.nome}}</h2>
+                        <p *ngIf="!cobertura.ocultar_descricao">
+                            {{cobertura.resumo}}
+                        </p>
+                        <span *ngIf="cobertura.cobertura_obrigatoria">cobertura inclusa *</span>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <div class="row">
+                            <div class="col-6">
+                                <button (click)="abrirDetalhes(cobertura)" mat-button>saiba +</button>
+                            </div>
+                            <div class="col-6">
+                                <mat-checkbox [checked]="cobertura.cobertura_obrigatoria"
+                                    [disabled]="cobertura.cobertura_obrigatoria"
+                                    (click)="selecionarCobertura(cobertura)">
+                                </mat-checkbox>
+                            </div>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

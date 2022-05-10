@@ -1,0 +1,30 @@
+<div class="questionario">
+  <div class="titulo">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h1>quer saber quanto custa seu seguro?</h1>
+          <h2>comece respondendo as perguntas abaixo e descubra :)</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-questao" *ngFor="let questao of questoes">
+      <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4">
+        <div class="legenda">{{questao.texto_questao}}*</div>
+      </div>
+      <div class="col-sm-12 col-md-8 col-lg-8 col-xs-8">
+        <mat-radio-group>
+          <div class="row">
+            <mat-radio-button
+              (click)="selecionarResposta(questao.id_questao, resposta.id_resposta, resposta.texto_resposta)"
+              *ngFor="let resposta of questao.respostas" value="{{resposta.id_resposta}}" class="col-sm-12 col-md-3 col-lg-3 col-xs-3">
+              {{resposta.texto_resposta}}
+            </mat-radio-button>
+          </div>
+        </mat-radio-group>
+      </div>
+    </div>
+  </div>
+</div>

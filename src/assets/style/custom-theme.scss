@@ -1,0 +1,97 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$DesafioSeguros-primary: mat.define-palette(mat.$orange-palette, 800);
+$DesafioSeguros-accent: mat.define-palette(mat.$orange-palette, 800);
+
+// The warn palette is optional (defaults to red).
+$DesafioSeguros-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$DesafioSeguros-theme: mat.define-light-theme((
+  color: (
+    primary: $DesafioSeguros-primary,
+    accent: $DesafioSeguros-accent,
+    warn: $DesafioSeguros-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($DesafioSeguros-theme);
+
+html, body { height: 100%;  color: #2b374a; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+.mat-radio-label-content{
+  font-size: 16px;
+}
+
+.mat-card-content h2{
+  font-weight: 500;
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.mat-tab-body{
+  padding-bottom: 50px;
+}
+
+.mat-button-base{
+  font-size: 18px;
+  padding: 8px!important;
+}
+
+.mat-checkbox-inner-container{
+  width: 26px!important;
+  height: 26px!important;
+}
+
+@media (max-width: 780px)
+{
+  .mat-radio-label{
+      margin-top: 15px;
+   }
+
+   .dadosPessoais .titulo{
+     display: none;
+   }
+
+   .questionario .titulo{
+     display: none;
+   }
+
+   .coberturas .titulo{
+     display: none;
+   }
+
+   .mat-tab-body{
+     padding-top: 50px;
+   }
+
+   .banner .img{
+     display: none;
+   }
+
+   .banner .banner-msg{
+     position: relative!important;
+     color: #2b374a!important;
+   }
+
+   .parceiro .logo img{
+     width: auto;
+   }
+}

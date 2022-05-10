@@ -1,0 +1,150 @@
+<div class="dadosPessoais">
+    <div class="titulo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>dados do <span>titular do seguro</span></h1>
+                </div>
+                <div class="col-12">
+                    <h2>chegou a hora de reunir algumas informações para continuar com a cotação do seguro, vamos lá?
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>nome completo</mat-label>
+                        <input formControlName="nome" matInput>
+                        <mat-hint>informar o nome completo sem abreviações</mat-hint>
+                        <mat-error
+                            *ngIf="form.controls['nome'].invalid && (form.controls['nome'].dirty || form.controls['nome'].touched)">
+                            o campo nome é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>CPF</mat-label>
+                        <input mask="000.000.000-00" formControlName="cpf" matInput>
+                        <mat-error
+                            *ngIf="form.controls['cpf'].invalid && (form.controls['cpf'].dirty || form.controls['cpf'].touched)">
+                            o campo cpf é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>data de nascimento</mat-label>
+                        <input mask="00/00/0000" formControlName="datanascimento" matInput>
+                        <mat-error
+                            *ngIf="form.controls['datanascimento'].invalid && (form.controls['datanascimento'].dirty || form.controls['datanascimento'].touched)">
+                            o campo data de nascimento é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>qual o CEP da sua residência?</mat-label>
+                        <input mask="00000-000" (focusout)="getEndereco($event)" formControlName="cep" matInput>
+                        <mat-error
+                            *ngIf="form.controls['cep'].invalid && (form.controls['cep'].dirty || form.controls['cep'].touched)">
+                            o campo cep é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>endereço</mat-label>
+                        <input [(ngModel)]="endereco.logradouro" formControlName="endereco" matInput>
+                        <mat-error
+                            *ngIf="form.controls['endereco'].invalid && (form.controls['endereco'].dirty || form.controls['endereco'].touched)">
+                            o campo endereço é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>número</mat-label>
+                        <input formControlName="numero" matInput>
+                        <mat-error
+                            *ngIf="form.controls['nome'].invalid && (form.controls['numero'].dirty || form.controls['numero'].touched)">
+                            o campo número é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>complemento</mat-label>
+                        <input formControlName="complemento" matInput>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>bairro</mat-label>
+                        <input [(ngModel)]="endereco.bairro" formControlName="bairro" matInput>
+                        <mat-error
+                            *ngIf="form.controls['bairro'].invalid && (form.controls['bairro'].dirty || form.controls['bairro'].touched)">
+                            o campo bairro é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>cidade</mat-label>
+                        <input [(ngModel)]="endereco.localidade" formControlName="cidade" matInput>
+                        <mat-error
+                            *ngIf="form.controls['cidade'].invalid && (form.controls['cidade'].dirty || form.controls['cidade'].touched)">
+                            o campo cidade é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xs-4 row-form">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>estado</mat-label>
+                        <mat-select [(value)]="endereco.uf" formControlName="estado">
+                            <mat-option [value]="estado.sigla" *ngFor="let estado of estados">{{ estado.sigla }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="form.controls['estado'].invalid && (form.controls['estado'].dirty || form.controls['estado'].touched)">
+                            o campo estado é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <p> Os dados inseridos por você poderão ser compartilhados com empresas parceiras para cotação e
+                contratação dos
+                produtos escolhidos e poderão ser tratados de acordo com a nossa Política de Privacidade disponível
+                em nossos
+                sites e aplicativos</p>
+        </div>
+        <div class="row">
+            <p class="parceiro"> Porto Seguro Cia. de Seguros Gerais. CNPJ 61.198.164/0001-60. Consulte as Condições
+                Gerais em
+                <a href="http://www.portoseguro.com.br/seguro-residencial"
+                    target="_blank">www.portoseguro.com.br/seguro-residencial</a>. Processos SUSEP: Residência
+                15414.002288/2005-85. Responsabilidade
+                Civil Patrimonial 15414.900937/2017-49. O registro do produto é automático e não representa
+                aprovação ou
+                recomendação por parte da Susep representando, exclusivamente, sua adequação às normas em vigor.
+            </p>
+        </div>
+        <div class="row">
+            <p> A Itaú Corretora de Seguros S.A comercializa com exclusividade os produtos: seguro residencial e
+                seguro
+                automóvel do Grupo Porto Seguro S.A, na figura de corretora de seguros.</p>
+        </div>
+    </div>
+</div>

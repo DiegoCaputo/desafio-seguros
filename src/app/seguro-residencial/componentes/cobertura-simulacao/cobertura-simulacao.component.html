@@ -1,0 +1,36 @@
+<div *ngIf="coberturas">
+    <div class="container">
+        <h1><b>veja as coberturas selecionadas</b></h1>
+        <div class="row">
+            <div *ngFor="let cobertura of coberturas" class="col-sm-12 col-md-6 col-lg-6 col-xs-6">
+                <mat-card>
+                    <div class="row titulo">
+                        <div class="col-sm-12 col-md-1 col-lg-1 col-xs-1">
+                            <img mat-card-image src="../../../../assets/imagens/{{cobertura.identificador}}.svg">
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                            <h2>{{cobertura.nome}}</h2>
+                        </div>
+                    </div>
+                    <mat-card-content>
+                        <h2>
+                            {{cobertura.resumo}}
+                        </h2>
+                        <div class="valores">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h4><b>valor de cada parcela:</b> {{cobertura.valor | currency:"BRL"}}</h4>
+                                </div>
+                                <div class="col-6">
+                                    <h4><b>valor segurado até:</b> {{cobertura.importancia_segurada | currency:"BRL"}}
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <small>{{cobertura.texto_franquia}}</small>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

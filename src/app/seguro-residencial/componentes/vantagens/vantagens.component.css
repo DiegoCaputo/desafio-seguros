@@ -1,0 +1,8 @@
+::ng-deep.mat-card {
+    min-height: 309px;
+}
+
+::ng-deep.mat-card-content p {
+    font-size: 16px;
+    line-height: 30px;
+}

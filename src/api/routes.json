@@ -1,0 +1,6 @@
+{
+    "/v1/ofertas/residencial": "/ofertas",
+    "/v1/ofertas/:id_oferta/questoes": "/questoes",
+    "/v1/simulacoes/assistencias": "/assistencias",
+    "/v1/ofertas/seguro/simulacao": "/simulacaoSeguro"
+}

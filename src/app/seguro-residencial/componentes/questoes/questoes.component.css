@@ -1,0 +1,27 @@
+.row-questao{
+   margin-bottom: 40px;
+}
+
+.row-questao .legenda{
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 2px solid #ef6c00;
+    padding-bottom: 10px;
+}
+
+.titulo{
+    padding: 30px;
+    margin-bottom: 50px;
+    background: #2B374A;
+    color: #fff;
+}
+
+.titulo h1{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+}
+
+.titulo h2{
+    margin: 0;
+}

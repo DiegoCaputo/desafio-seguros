@@ -1,0 +1,47 @@
+::ng-deep.mat-card{
+    min-height: 385px;
+    margin-bottom: 30px;
+}
+
+::ng-deep.mat-card:hover{
+    background-color: hsla(0,0%,98%,.98);
+    transition: 0.1s;
+}
+
+.mat-card img{
+    margin-top: 20px;
+}
+
+.mat-card-content span{
+    font-weight: 500;
+}
+
+.coberturaSelecionada{
+    background-color: hsla(0,0%,98%,.98);
+    border: 3px solid rgba(245, 124, 0, 1);
+    transition: 0.1s;
+}
+
+.coberturaObrigatoria{
+    cursor: default;
+}
+
+.coberturaSaibaMais{
+    text-align: center;
+}
+
+.titulo{
+    padding: 30px;
+    margin-bottom: 50px;
+    background: #F3F3F3;
+}
+
+.titulo h1{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.titulo h2{
+    margin: 0;
+}

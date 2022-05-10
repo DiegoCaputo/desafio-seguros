@@ -1,0 +1,20 @@
+<div class="container">
+    <h1><b>veja algumas das opções de pagamento</b></h1>
+    <div class="resumoParcelas">
+        <div class="row parcelas">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6" *ngIf="cartaoCredito6x">
+                <h1>em até 6x de</h1>
+                <h2>{{cartaoCredito6x.valor_parcela | currency:"BRL"}} <span>no cartão de crédito</span> sem juros</h2>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-6" *ngIf="cartaoCreditoPS6x">
+                <h1>em até 6x de</h1>
+                <h2>{{cartaoCreditoPS6x.valor_parcela | currency:"BRL"}} <span>no cartão porto seguro</span> sem juros</h2>
+            </div>
+        </div>
+        <div class="row avista">
+            <div class="col-12">
+                <h2 *ngIf="cartaoCredito1x">ou {{cartaoCredito1x.valor_parcela | currency:"BRL"}} <span>à vista</span></h2>
+            </div>
+        </div>
+    </div>
+</div>

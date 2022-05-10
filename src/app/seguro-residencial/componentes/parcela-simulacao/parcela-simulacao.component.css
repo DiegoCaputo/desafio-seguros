@@ -1,0 +1,23 @@
+.resumoParcelas{
+    padding: 30px;
+    background: #2B374A;
+    color: #FFF;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+h1, h2{
+    margin-bottom:0;
+}
+
+h2 span{
+    color: #ef6c00;
+    font-weight: 500;
+}
+
+.parcelas{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+}
